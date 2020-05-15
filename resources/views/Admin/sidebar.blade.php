@@ -74,7 +74,7 @@
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active">
-                            <a href="{{ route('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						{{-- <li>
                             <a href="{{ route('registration') }}"><i class="fa fa-user-md"></i> <span>Registration</span></a>

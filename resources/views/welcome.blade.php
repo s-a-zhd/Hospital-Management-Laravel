@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Welcome to School Management
+                    Welcome to Hospital Management
                 </div>
 
                 <div class="links">
