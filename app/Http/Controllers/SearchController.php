@@ -68,4 +68,25 @@ class SearchController extends Controller
 
 
 }
+
+    public function verify(Request $req){
+        //DB::enableQueryLog();
+       
+        $check=$req->token;
+        $list=DB::table('verify')->where('token',$check)->first();
+        //dd(DB::getQueryLog());
+        
+        $email=$list->email;
+        // foreach ($list as $user){
+        //      $email       = $user[0]['email'];
+        //  }
+        if($list){
+            $update = "verified";
+            $list = DB::table('users')->where('email',$email)->update(array('email_status' =>$update));
+            echo "Email verified";
+        }
+        else{
+            echo "Token Did Not Match";
+        }  
+    }
 }

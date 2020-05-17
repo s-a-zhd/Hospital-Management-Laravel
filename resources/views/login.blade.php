@@ -52,10 +52,10 @@
 				</script>
 				<br>
 				<div>
-					<a href="/signup">Sign Up</a>
+					<a href="{{ url('signup/create') }}">Sign Up</a>
 					<br>
 					<br>
-					<a href="http://localhost:3000/resetpassword">Forget Password</a>
+					<a href="">Forget Password</a>
 				</div>
 				
 				

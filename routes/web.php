@@ -20,6 +20,7 @@ Route::get('/', function () {
 Route::get('/login', 'LoginController@index') -> name('login');
 Route::post('/login', 'LoginController@verify');
 
+
 Route::get('/registration', 'AdminController@registration') -> name('registration');
 Route::post('/registration', 'AdminController@user_reg') -> name('user_registration');
 
@@ -70,5 +71,10 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/mail','MailController@index');
 Route::get('/logout','LogoutController@index');
 });
+Route::resource('signup', 'SignupController');
+Route::resource('verify', 'VerifyController');
+Route::post('/verification','SearchController@verify')->name('verification');
+
+
 
 

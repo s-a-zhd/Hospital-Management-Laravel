@@ -21,22 +21,30 @@ class LoginController extends Controller
 
         $email = $req ->email;
         $password = $req ->password;
-       
+        //DB::enableQueryLog();
         $user = DB::table('users')
                 ->where('email',$email)
                 ->where('password',$password)
                 
                 ->first();
+               // dd(DB::getQueryLog());
+        $status = $user->email_status;
+        
 
         if ($user !=null){
-           
+
+            if ($status=="not_verified"){
+                echo "Please Verify Your Email first";
+            }
+
+           else {
                 $notification=array(
                     'messege'=>'Successfully Logged in',
                     'alert-type'=>'success'
                      );
                 $req->session()->put('email' , $email);
                 return redirect('/dashboard');
-            
+                    }
 
         
 
