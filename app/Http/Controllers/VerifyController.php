@@ -15,16 +15,17 @@ class VerifyController extends Controller
     public function index(Request $request)
     {
         //
-        $check=$req->token;
-        $list=DB::table('store')->where('token',$check)->first();
-        $email = $list[0]->email;
-        if($list){
-            $update = "verified";
-            $list = DB::table('users')->where('email',$email)->update(array('email_status' =>$update));
-        }
-        else{
-            echo "Token Did Not Match";
-        }
+
+        // $check=$req->token;
+        // $list=DB::table('store')->where('token',$check)->first();
+        // $email = $list[0]->email;
+        // if($list){
+        //     $update = "verified";
+        //     $list = DB::table('users')->where('email',$email)->update(array('email_status' =>$update));
+        // }
+        // else{
+        //     echo "Token Did Not Match";
+        // }
     }
 
     /**
